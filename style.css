@@ -14,10 +14,32 @@ header {
   padding: 20px 30px;
 }
 
+
+
+
+/*  .burger {
+     
+    }
+   
+      .menu {
+       
+      }
+      .menu a {
+        border: none;
+      }
+    }
+    .menu.show {
+      display: flex;
+    }
+
+ */
+
+
+
 .menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+   display: flex;
+        flex-direction: row;
+        background: none;
 }
 
 .menu ul {
@@ -27,8 +49,8 @@ header {
 }
 
 .burger {
-  display: none;
-  flex-direction: column;
+  display: block;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -40,8 +62,8 @@ header {
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
-  .menu ul {
+@media (min-width: 768px) {
+  .burger {
     display: none;
     flex-direction: column;
     background-color: white;
