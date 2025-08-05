@@ -6,6 +6,7 @@ body {
   background-color: #fff8f2;
   color: #5a2e1b;
 }
+
 header {
   background-color: #FFD6B3;
   display: flex;
@@ -54,13 +55,13 @@ header {
   cursor: pointer;
 }
 
-.burger span {
+/* .burger span {
   height: 3px;
   width: 25px;
   background: #333;
   margin-bottom: 4px;
   border-radius: 2px;
-}
+} */
 
 @media (min-width: 768px) {
   .burger {
