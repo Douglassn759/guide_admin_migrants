@@ -71,11 +71,11 @@ header {
   gap: 20px;
 }
 
-.navbar a {
+/* .navbar a {
   text-decoration: none;
   color: #5a2e1b;
   font-weight: bold;
-}
+} */
 .nomsite{
   text-align: center;
   margin-top: 30px;
