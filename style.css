@@ -48,10 +48,10 @@ header {
     display: none;
   }
 
-  .menu ul.active {
+/*   .menu ul.active {
     display: flex;
   }
-
+ */
   .burger {
     display: flex;
   }
