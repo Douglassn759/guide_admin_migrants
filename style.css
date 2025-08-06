@@ -53,6 +53,7 @@ nav a {
   cursor: pointer;
 }
 
+
 @media (max-width: 768px) {
   nav {
     display: none;
@@ -80,6 +81,36 @@ nav a {
   }
 }
 
+
+
+
+/* @media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 70px; /* position sous le header */
+    left: 0;
+    width: 100%;
+    background-color: #FFD6B3;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  h1 {
+    order: 3;
+    flex: 1 1 100%;
+  }
+}
+ */
 
 
 /* body {
