@@ -14,8 +14,8 @@
     </div>
     <h1>Guide Administratif & Migrants</h1>
     <div class="burger" id="burger">☰</div>
-    <nav id="menu">
-      <a href="#acceuil">Acceuil </a>
+    <nav id="navLinks">
+      <a href="#acceuil">Accueil</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -110,12 +110,11 @@
 </footer>
 <script>
     const burger = document.getElementById('burger');
-    const nav = document.getElementById('nav');
+    const nav = document.getElementById('navLinks');
 
     burger.addEventListener('click', () => {
-    nav.classList.toggle('open');
+      nav.classList.toggle('open');
     });
-
-</script>
+  </script>
 </body>
 </html>
