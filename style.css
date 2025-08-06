@@ -16,37 +16,17 @@ header {
 }
 
 
-
-
-/*  .burger {
-     
-    }
-   
-      .menu {
-       
-      }
-      .menu a {
-        border: none;
-      }
-    }
-    .menu.show {
-      display: flex;
-    }
-
- */
-
-
-
 .menu {
    display: flex;
         flex-direction: row;
         background: none;
 }
 
-.menu ul {
+.menu a {
   list-style: none;
   display: flex;
   gap: 1rem;
+  border: none
 }
 
 .burger {
@@ -66,14 +46,6 @@ header {
 @media (min-width: 768px) {
   .burger {
     display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
 
   .menu ul.active {
@@ -84,6 +56,9 @@ header {
     display: flex;
   }
 }
+ .menu.show {
+      display: flex;
+    }
 
 
 .logo img {
