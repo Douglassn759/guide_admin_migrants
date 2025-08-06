@@ -14,8 +14,8 @@
     </div>
     <h1>Guide Administratif</h1>
     <div class="burger" id="burger">☰</div>
-    <nav id="menu" id="menu">
-      <a href="#acceuil"></a>
+    <nav id="menu">
+      <a href="#Acceuil"></a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -108,16 +108,14 @@
   </div>
   <p>&copy; 2025 Guide administratif et migrants. Tous droits réservés.</p>
 </footer>
+<script>
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
 
-  <script>
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('navLinks');
-
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
+    burger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    });
 
 </script>
-
 </body>
 </html>
