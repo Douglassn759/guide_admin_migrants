@@ -65,12 +65,7 @@ header {
   height: 60px;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
+/* @ */
 /* .navbar a {
   text-decoration: none;
   color: #5a2e1b;
