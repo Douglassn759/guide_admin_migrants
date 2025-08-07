@@ -10,9 +10,9 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color:  #fff8f2;
+      background-color: #fff8f2;
       color: #333;
-      padding-top: 80px; /* pour éviter que le header fixe cache le contenu */
+      padding-top: 80px;
     }
 
     /* HEADER FIXE */
@@ -21,7 +21,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #FFD6B3; 
+      background-color: #FFD6B3;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -32,28 +32,35 @@
     }
 
     .logo {
-      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 30px;
     }
 
     header h1 {
       font-size: 18px;
       margin-left: 10px;
-      flex: 1;
+      color: #333;
     }
 
     .burger {
       font-size: 24px;
       cursor: pointer;
       display: none;
+      color: #333;
     }
 
     nav {
       display: flex;
       gap: 15px;
+      align-items: center;
     }
 
     nav a {
-      color: white;
+      color: #333;
       text-decoration: none;
       font-weight: bold;
     }
@@ -73,7 +80,7 @@
         top: 60px;
         left: 0;
         right: 0;
-        background-color: #4A90E2;
+        background-color: #FFD6B3;
         flex-direction: column;
         display: none;
         text-align: center;
@@ -85,19 +92,18 @@
 
       nav a {
         padding: 15px 0;
-        border-top: 1px solid #3c7fc0;
+        border-top: 1px solid #f5b787;
       }
     }
 
- section {
+/*     /* SECTIONS EXEMPLE */
+/*     section {
       padding: 30px 20px;
       background: white;
       margin: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-
+      box-shadow: 0 0 10px rgba(0,0,0,0.05); */
+    } */
 
 
 
