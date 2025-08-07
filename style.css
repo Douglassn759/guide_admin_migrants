@@ -1,6 +1,116 @@
 
 
- body {
+
+
+/* style.css */
+
+/* Général */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-top: 80px; /* pour éviter que le header fixe cache le contenu */
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header fixe */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #77DD77; /* vert menthe */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Titre du header */
+header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Burger */
+.burger {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #77DD77;
+    flex-direction: column;
+    display: none;
+    text-align: center;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 15px 0;
+    border-top: 1px solid #66cc66;
+  }
+}
+
+/* /* Sections */
+section {
+/*   padding: 30px 20px;
+  background: white;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05); */
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  body {
   padding-top: 120px;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -78,7 +188,7 @@ nav a {
     flex: 1 1 100%;
   }
 }
- 
+  */
 
 
 
