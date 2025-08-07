@@ -8,22 +8,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header> 
-    <div class="logo">
-      <img src="logo.png" alt="Logo Guide administratif" />
+  <header>
+    <h1>Logo Guide administratif</h1>
+    <div class="burger" onclick="toggleMenu()">
+      &#9776;
     </div>
-    <h1>Guide Administratif & Migrants</h1>
-    
-    <div class="burger" onclick="toggleMenu()">☰</div>
-<!-- 
-     <div class="burger" onclick="toggleMenu()">
-      &#9776;   -->
     <nav id="nav">
-      <a href="#acceuil">Accueil</a>
+      <a href="#accueil">Accueil</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
-
   </header>
   
   <main>
@@ -113,18 +107,20 @@
   </div>
   <p>&copy; 2025 Guide administratif et migrants. Tous droits réservés.</p>
 </footer>
-<script>
-    const burger = document.getElementById('burger');
-    const nav = document.getElementById('nav');
-
+ <script>
     function toggleMenu() {
-  const nav = document.querySelector('nav');
-  nav.classList.toggle('open');
-}
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('open');
+    }
 
-    // burger.addEventListener('click', () => {
-    //   nav.classList.toggle('open');
-    // });
+    // Ferme le menu quand on clique sur un lien (en version mobile)
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('nav').classList.remove('open');
+        });
+      });
+    });
   </script>
 </body>
 </html>
