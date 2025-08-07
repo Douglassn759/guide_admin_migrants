@@ -13,8 +13,9 @@
     <div class="logo">
       <img src="logo.png" alt="Logo Guide administratif" />
     </div>
-    <h1>Guide Administratif</h1>
-    <div class="burger" id="burger">☰</div>
+    <h1>Guide Administratif & Migrants</h1>
+    <div class="burger" id="burger" onclick="toggleMenu()">
+      &#9776;>☰</div>
     <nav id="navLinks">
       <a href="#acceuil">Accueil</a>
       <a href="#services">Services</a>
@@ -128,9 +129,14 @@
        const burger = document.getElementById('burger');
     const nav = document.getElementById('navLinks');
 
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
+
+function toggleMenu() {
+    //   const navLink = document.getElementById('navLink');
+    //   nav.classList.toggle('open');
+   
+    // burger.addEventListener('click', () => {
+    //   nav.classList.toggle('open');
+    // });
 
    
     // function toggleMenu() {
