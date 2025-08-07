@@ -10,7 +10,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color:  #fff8f2;
       color: #333;
       padding-top: 80px; /* pour éviter que le header fixe cache le contenu */
     }
@@ -21,7 +21,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #4A90E2; /* Couleur bleue douce */
+      background-color: #FFD6B3; 
       color: white;
       display: flex;
       justify-content: space-between;
@@ -31,7 +31,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    .logo img {
+    .logo {
       height: 40px;
     }
 
@@ -173,7 +173,7 @@ nav a {
     top: 70px; /* position sous le header */
     left: 0;
     width: 100%;
-    background-color: #FFD6B3;
+    background-color:#FFD6B3;
     padding: 10px 0;
     z-index: 999;
   }
