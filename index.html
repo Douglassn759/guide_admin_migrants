@@ -9,7 +9,18 @@
 </head>
 <body>
   <header>
+
     <div class="logo">
+      <img src="logo.png" alt="Logo Guide administratif" />
+    </div>
+    <h1>Guide Administratif</h1>
+    <div class="burger" id="burger">☰</div>
+    <nav id="navLinks">
+      <a href="#acceuil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+<!--     <div class="logo">
       <img src="logo.png" alt="Logo Guide administratif" />
     </div>
     <h1>Guide administratif & Migrants</h1>
@@ -20,7 +31,7 @@
       <a href="#accueil">Accueil</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
-    </nav>
+    </nav> -->
   </header>
   
   <main>
@@ -111,19 +122,30 @@
   <p>&copy; 2025 Guide administratif et migrants. Tous droits réservés.</p>
 </footer>
  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav');
-      nav.classList.toggle('open');
-    }
 
-    // Ferme le menu quand on clique sur un lien (en version mobile)
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-          document.getElementById('nav').classList.remove('open');
-        });
-      });
+
+
+       const burger = document.getElementById('burger');
+    const nav = document.getElementById('navLinks');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('open');
     });
+
+   
+    // function toggleMenu() {
+    //   const nav = document.getElementById('nav');
+    //   nav.classList.toggle('open');
+    // }
+
+    // // Ferme le menu quand on clique sur un lien (en version mobile)
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   document.querySelectorAll('nav a').forEach(link => {
+    //     link.addEventListener('click', () => {
+    //       document.getElementById('nav').classList.remove('open');
+    //     });
+    //   });
+    // });
   </script>
 </body>
 </html>
