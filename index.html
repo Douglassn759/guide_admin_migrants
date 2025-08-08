@@ -2,16 +2,522 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide administratif et migrants - Accompagnement personnalisé</title>
     <meta name="description" content="Service d'accompagnement administratif pour migrants à Elancourt. Aide aux démarches préfecture, naturalisation, renouvellement titres de séjour.">
     <meta name="keywords" content="accompagnement migrants, démarches administratives, préfecture, naturalisation, Elancourt">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://accompagnement-migrants.fr">
+    <meta property="og:title" content="Guide administratif et migrants - Accompagnement personnalisé">
+    <meta property="og:description" content="Service d'accompagnement administratif pour migrants à Elancourt. Aide aux démarches préfecture, naturalisation, renouvellement titres de séjour.">
+    <meta property="og:image" content="https://accompagnement-migrants.fr/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://accompagnement-migrants.fr">
+    <meta property="twitter:title" content="Guide administratif et migrants - Accompagnement personnalisé">
+    <meta property="twitter:description" content="Service d'accompagnement administratif pour migrants à Elancourt. Aide aux démarches préfecture, naturalisation, renouvellement titres de séjour.">
+    <meta property="twitter:image" content="https://accompagnement-migrants.fr/logo.png">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Guide administratif et migrants",
+        "description": "Service d'accompagnement administratif pour migrants",
+        "url": "https://accompagnement-migrants.fr",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Elancourt",
+            "addressRegion": "Yvelines",
+            "addressCountry": "FR"
+        },
+        "serviceType": "Accompagnement administratif",
+        "areaServed": "Yvelines"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FFD6B3;
+            --secondary-color: #FF9B73;
+            --accent-color: #FF6B35;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --background-light: #FFF9F5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: 0.3s;
+        }
+
+        .burger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .burger.active span:nth-child(2) { opacity: 0; }
+        .burger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--background-light);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Advantages Section */
+        .advantages {
+            background: var(--background-light);
+        }
+
+        .advantages h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .advantage-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--background-light);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+
+        .testimonial-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--background-light);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--primary-color);
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .photo-section {
+            background: var(--background-light);
+        }
+
+        .photo-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            height: 200px;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact Form */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .submit-btn {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="container">
             <div class="header-content">
                 <img src="logo.png" alt="Guide administratif et migrants" class="logo">
                 <nav>
@@ -29,8 +535,9 @@
             </div>
         </div>
     </header>
-  
-  <section class="hero">
+
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <h1>🤝 Votre Guide pour les Démarches Administratives</h1>
             <p>Accompagnement personnalisé pour tous vos besoins administratifs et sociaux</p>
@@ -56,7 +563,7 @@
                 <div class="service-card">
                     <div class="service-icon">📋</div>
                     <h3>Autres Démarches</h3>
-                    <p>Support pour toutes vos démarches administratives : changement de statut, regroupement familial,titres de séjour, Caf, France Travail, obtention Navigo pour enfant et plus encore etc.</p>
+                    <p>Support pour toutes vos démarches administratives : changement de statut, regroupement familial, etc.</p>
                 </div>
             </div>
         </div>
@@ -65,13 +572,13 @@
     <!-- Advantages Section -->
     <section id="advantages" class="advantages">
         <div class="container">
-            <h2>⭐ Nos Atouts</h2>
+            <h2>⭐ Mes Atouts</h2>
             <div class="advantages-grid">
                 <div class="advantage-item">
                     <span class="advantage-icon">👥</span>
                     <div>
                         <h4>Accompagnement Personnalisé</h4>
-                        <p>Suivi individuel adapté à votre situation administrative et juridique</p>
+                        <p>Suivi individuel adapté à votre situation</p>
                     </div>
                 </div>
                 <div class="advantage-item">
@@ -120,22 +627,70 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>❓ Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>💰 Quels sont vos tarifs ?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nos tarifs varient selon le type de démarche : consultation initiale 30€, accompagnement renouvellement titre de séjour 80€, dossier naturalisation 150€. Devis gratuit par téléphone.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>⏰ Combien de temps prend un accompagnement ?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cela dépend de votre situation : préparation dossier (1-2 semaines), accompagnement préfecture (demi-journée), suivi jusqu'à obtention du titre.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>📍 Vous déplacez-vous à la préfecture avec nous ?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, nous vous accompagnons physiquement lors de vos rendez-vous en préfecture pour vous assister et traduire si nécessaire.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>🌍 Quelles langues parlez-vous ?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous parlons français, anglais, arabe et espagnol pour mieux vous accompagner dans vos démarches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Photo Section -->
     <section class="photo-section">
         <div class="container">
             <h2>📸 Notre Environnement</h2>
             <div class="photo-grid">
                 <div class="photo-item">
-                    <img src="rendezvous-prefecture.jpg" alt="Bureau d'accueil">
+                    <img src="bureau.jpg" alt="Bureau d'accueil">
                 </div>
                 <div class="photo-item">
-                    <img src="demarches-prefecture.jpg" alt="Préfecture">
+                    <img src="prefecture.jpg" alt="Préfecture">
                 </div>
                 <div class="photo-item">
-                    <img src="accompagnement-administratif.jpg" alt="Consultation">
+                    <img src="consultation.jpg" alt="Consultation">
                 </div>
                 <div class="photo-item">
-                    <img src="naturalisation-aide.jpg" alt="Documents">
+                    <img src="documents.jpg" alt="Documents">
                 </div>
             </div>
         </div>
@@ -146,7 +701,7 @@
         <div class="container">
             <h2>📧 Contact</h2>
             <div class="form-container">
-                <form action="https://formspree.io/f/myzpdonn" method="POST">
+                <form action="https://formspree.io/f/votre-id-formspree" method="POST">
                     <div class="form-group">
                         <label for="name">👤 Nom et Prénom *</label>
                         <input type="text" id="name" name="name" required>
@@ -179,8 +734,8 @@
         </div>
     </section>
 
-
- <footer>
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <a href="https://wa.me/33123456789" class="footer-link" target="_blank">
@@ -197,10 +752,9 @@
                 © 2025 Guide administratif et migrants - Tous droits réservés
             </p>
         </div>
- </footer>
+    </footer>
 
-
- <script>
+    <script>
         // Menu burger functionality
         const burger = document.querySelector('.burger');
         const navMenu = document.querySelector('.nav-menu');
@@ -228,6 +782,24 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
                 }
             });
         });
