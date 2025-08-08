@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions Générales de Vente - Guide administratif et migrants</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FFD6B3;
+            --secondary-color: #FF9B73;
+            --accent-color: #FF6B35;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --background-light: #FFF9F5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+            --success-color: #27AE60;
+            --warning-color: #E67E22;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .back-link {
+            background: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Content */
+        .cgv-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--text-dark);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .important {
+            background: var(--background-light);
+            padding: 1rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .warning {
+            background: #FEF5E7;
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .success {
+            background: #E8F5E8;
+            border-left: 4px solid var(--success-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .tarif-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .tarif-table th {
+            background: var(--primary-color);
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .tarif-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tarif-table tr:hover {
+            background: var(--background-light);
+        }
+
+        .signature-section {
+            background: var(--primary-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .signature-checkbox {
+            margin: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .signature-checkbox input[type="checkbox"] {
+            margin-top: 0.3rem;
+            transform: scale(1.2);
+        }
+
+        .contact-info {
+            background: var(--background-light);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+        }
+
+        .date {
+            text-align: right;
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 2rem;
+        }
+
+        .article-number {
+            background: var(--accent-color);
+            color: var(--white);
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem 10px;
+            }
+            
+            .cgv-content {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tarif-table {
+                font-size: 0.9rem;
+            }
+            
+            .signature-checkbox {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media print {
+            .back-link, footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Guide administratif et migrants" class="logo">
+            <a href="index.html" class="back-link">🏠 Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="cgv-content">
+            <h1>📋 Conditions Générales de Vente</h1>
+
+            <div class="important">
+                <p><strong>⚠️ Important :</strong> Ces conditions générales de vente s'appliquent à toutes nos prestations d'accompagnement administratif. Leur acceptation est obligatoire avant toute prestation.</p>
+            </div>
+
+            <!-- ARTICLE 1 -->
+            <h2><span class="article-number">1</span>OBJET ET CHAMP D'APPLICATION</h2>
+            
+            <p>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre :</p>
+            
+            <div class="contact-info">
+                <p><strong>Le Prestataire :</strong><br>
+                Guide administratif et migrants<br>
+                Auto-entrepreneur<br>
+                SIRET : 9784817110015<br>
+                Adresse : 2 Résidence de l'espace, Elancourt, 78990<br>
+                Email : contact@accompagnement-migrants.fr<br>
+                Téléphone : 0033751493037</p>
+            </div>
+            
+            <p>Et <strong>le Client</strong> personne physique ou morale sollicitant nos services d'accompagnement administratif.</p>
+            
+            <p>Ces CGV s'appliquent à l'exclusion de toute autre condition, sauf accord écrit préalable.</p>
+
+            <!-- ARTICLE 2 -->
+            <h2><span class="article-number">2</span>DESCRIPTION DES PRESTATIONS</h2>
+            
+            <h3>Nos services comprennent :</h3>
+            <ul>
+                <li><strong>🔄 Accompagnement renouvellement de titres de séjour :</strong>
+                    <ul>
+                        <li>Vérification et constitution du dossier</li>
+                        <li>Prise de rendez-vous en préfecture</li>
+                        <li>Accompagnement physique au rendez-vous</li>
+                        <li>Suivi jusqu'à l'obtention du récépissé</li>
+                    </ul>
+                </li>
+                <li><strong>🇫🇷 Aide à la naturalisation :</strong>
+                    <ul>
+                        <li>Évaluation de l'éligibilité</li>
+                        <li>Constitution complète du dossier</li>
+                        <li>Préparation à l'entretien de naturalisation</li>
+                        <li>Suivi de la procédure</li>
+                    </ul>
+                </li>
+                <li><strong>👨‍👩‍👧‍👦 Regroupement familial :</strong>
+                    <ul>
+                        <li>Analyse des conditions</li>
+                        <li>Préparation du dossier complet</li>
+                        <li>Suivi de la procédure</li>
+                    </ul>
+                </li>
+                <li><strong>📋 Autres démarches administratives :</strong>
+                    <ul>
+                        <li>Changement de statut</li>
+                        <li>Autorisation de travail</li>
+                        <li>Récépissé de première demande</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="warning">
+                <p><strong>⚖️ Obligation de moyens :</strong> Nos prestations constituent une obligation de moyens et non de résultat. Nous mettons tout en œuvre pour vous accompagner, mais nous ne pouvons garantir l'obtention des titres de séjour, celle-ci dépendant exclusivement des décisions des administrations compétentes.</p>
+            </div>
+
+            <!-- ARTICLE 3 -->
+            <h2><span class="article-number">3</span>TARIFS ET MODALITÉS DE PAIEMENT</h2>
+            
+            <h3>Grille tarifaire :</h3>
+            <table class="tarif-table">
+                <thead>
+                    <tr>
+                        <th>Prestation</th>
+                        <th>Tarif</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🔍 Consultation initiale / Évaluation</td>
+                        <td>30 €</td>
+                        <td>1h</td>
+                    </tr>
+                    <tr>
+                        <td>🔄 Renouvellement titre de séjour</td>
+                        <td>80 €</td>
+                        <td>Jusqu'à obtention récépissé</td>
+                    </tr>
+                    <tr>
+                        <td>🇫🇷 Dossier naturalisation (constitution)</td>
+                        <td>150 €</td>
+                        <td>Dossier complet + 1 simulation entretien</td>
+                    </tr>
+                    <tr>
+                        <td>👨‍👩‍👧‍👦 Regroupement familial</td>
+                        <td>1000 €</td>
+                        <td>Constitution dossier complet</td>
+                    </tr>
+                    <tr>
+                        <td>📞 Accompagnement préfecture</td>
+                        <td>40 €</td>
+                        <td>Par rendez-vous</td>
+                    </tr>
+                    <tr>
+                        <td>🌍 Traduction / Interprétariat</td>
+                        <td>25 € / h</td>
+                        <td>Tarif horaire</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="success">
+                <p><strong>🎁 Avantage :</strong> La consultation initiale est <strong>gratuite</strong> si vous souscrivez à une prestation complète dans les 15 jours.</p>
+            </div>
+
+            <h3>Modalités de paiement :</h3>
+            <ul>
+                <li><strong>💰 Acompte :</strong> 50% à la commande</li>
+                <li><strong>💰 Solde :</strong> 50% avant le début de la prestation</li>
+                <li><strong>💳 Moyens de paiement acceptés :</strong>
+                    <ul>
+                        <li>Espèces (dans la limite légale)</li>
+                        <li>Chèque bancaire</li>
+                        <li>Virement bancaire</li>
+                        <li>PayPal / Carte bancaire</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="important">
+                <p><strong>⏰ Important :</strong> Aucune prestation ne sera débutée sans le paiement intégral. Les tarifs sont valables 30 jours à compter de l'établissement du devis.</p>
+            </div>
+
+            <!-- ARTICLE 4 -->
+            <h2><span class="article-number">4</span>OBLIGATIONS RESPECTIVES</h2>
+
+            <h3>Nos engagements :</h3>
+            <ul>
+                <li>✅ Fournir des conseils adaptés à votre situation</li>
+                <li>✅ Respecter la confidentialité de vos informations</li>
+                <li>✅ Vous tenir informé de l'avancement de votre dossier</li>
+                <li>✅ Vous accompagner physiquement aux rendez-vous convenus</li>
+                <li>✅ Mettre à jour nos connaissances réglementaires</li>
+                <li>✅ Respecter les délais convenus</li>
+            </ul>
+
+            <h3>Vos engagements :</h3>
+            <ul>
+                <li>📄 Fournir tous les documents demandés dans les délais</li>
+                <li>✅ Donner des informations exactes et complètes</li>
+                <li>⏰ Être ponctuel aux rendez-vous</li>
+                <li>💰 Régler les honoraires selon les modalités convenues</li>
+                <li>📞 Nous informer de tout changement de situation</li>
+                <li>🤝 Suivre nos conseils et recommandations</li>
+                <li>🏛️ Se présenter personnellement aux convocations administratives</li>
+            </ul>
+
+            <div class="warning">
+                <p><strong>⚠️ Attention :</strong> Le non-respect de vos obligations peut compromettre le bon déroulement de la mission et dégager notre responsabilité quant aux résultats obtenus.</p>
+            </div>
+
+            <!-- ARTICLE 5 -->
+            <h2><span class="article-number">5</span>LIMITATION DE RESPONSABILITÉ</h2>
+
+            <p>Notre responsabilité est limitée dans les cas suivants :</p>
+
+            <h3>Exclusions de responsabilité :</h3>
+            <ul>
+                <li>🚫 <strong>Décisions administratives :</strong> Nous ne sommes pas responsables des refus, retards ou décisions négatives des préfectures</li>
+                <li>🚫 <strong>Documents incomplets/erronés :</strong> Fournis par le client malgré nos vérifications</li>
+                <li>🚫 <strong>Non-respect des obligations du client :</strong> Absence aux RDV, retard dans la fourniture de documents</li>
+                <li>🚫 <strong>Changements réglementaires :</strong> Modifications soudaines des procédures administratives</li>
+                <li>🚫 <strong>Grèves / cas de force majeure :</strong> Fermeture des services publics</li>
+            </ul>
+
+            <h3>Limitation des dommages-intérêts :</h3>
+            <p>En cas de manquement prouvé de notre part, notre responsabilité est limitée au montant des honoraires perçus pour la prestation concernée.</p>
+
+            <div class="important">
+                <p><strong>📋 Important :</strong> Nous ne sommes ni avocats ni représentants légaux. Pour tout conseil juridique complexe, nous vous orienterons vers des professionnels compétents.</p>
+            </div>
+
+            <!-- ARTICLE 6 -->
+            <h2><span class="article-number">6</span>DROIT DE RÉTRACTATION</h2>
+
+            <p>Conformément au Code de la consommation, vous disposez d'un délai de <strong>14 jours</strong> pour exercer votre droit de rétractation sans avoir à justifier de motifs ni à payer de pénalités.</p>
+
+            <h3>Modalités :</h3>
+            <ul>
+                <li>📧 <strong>Notification :</strong> Email à contact@accompagnement-migrants.fr</li>
+                <li>📮 <strong>Courrier :</strong> [Votre adresse], Elancourt, 78990</li>
+                <li>⏰ <strong>Délai :</strong> Commence à la signature du contrat</li>
+                <li>💰 <strong>Remboursement :</strong> Sous 14 jours après réception de votre demande</li>
+            </ul>
+
+            <div class="warning">
+                <p><strong>⚠️ Exception :</strong> Si la prestation a commencé à votre demande expresse avant la fin du délai de rétractation, vous devrez payer la quote-part du service déjà fourni.</p>
+            </div>
+
+            <!-- ARTICLE 7 -->
+            <h2><span class="article-number">7</span>ANNULATION ET REPORT</h2>
+
+            <h3>Annulation par le client :</h3>
+            <ul>
+                <li>📅 <strong>Plus de 48h avant :</strong> Remboursement intégral de l'acompte</li>
+                <li>📅 <strong>24 à 48h avant :</strong> Retenue de 30% de l'acompte</li>
+                <li>📅 <strong>Moins de 24h ou absence :</strong> Retenue de 50% de l'acompte</li>
+            </ul>
+
+            <h3>Annulation par nos soins :</h3>
+            <p>En cas d'impossibilité de notre part (maladie, cas de force majeure), nous nous engageons à :</p>
+            <ul>
+                <li>🔄 Reporter la prestation à une date convenant aux deux parties</li>
+                <li>💰 Rembourser intégralement en cas d'impossibilité de report</li>
+                <li>📞 Vous prévenir dans les meilleurs délais</li>
+            </ul>
+
+            <h3>Report :</h3>
+            <ul>
+                <li>✅ <strong>1er report :</strong> Gratuit si demandé plus de 24h avant</li>
+                <li>💰 <strong>Reports suivants :</strong> Facturation de 15€</li>
+            </ul>
+
+            <!-- ARTICLE 8 -->
+            <h2><span class="article-number">8</span>CONFIDENTIALITÉ ET PROTECTION DES DONNÉES</h2>
+
+            <h3>Engagement de confidentialité :</h3>
+            <p>Nous nous engageons à :</p>
+            <ul>
+                <li>🔒 Garder strictement confidentielles toutes les informations personnelles</li>
+                <li>🛡️ Ne pas divulguer vos données à des tiers non autorisés</li>
+                <li>📋 Utiliser les informations uniquement dans le cadre de votre accompagnement</li>
+                <li>🗂️ Conserver vos documents en sécurité</li>
+            </ul>
+
+            <h3>Traitement des données :</h3>
+            <p>Le traitement de vos données personnelles est régi par notre Politique de confidentialité accessible sur notre site. Vous disposez de droits sur vos données (accès, rectification, effacement) que vous pouvez exercer en nous contactant.</p>
+
+            <div class="success">
+                <p><strong>🔐 Sécurité :</strong> Tous nos échanges et documents sont sécurisés. Nous détruisons les documents de travail 3 ans après la fin de votre accompagnement.</p>
+            </div>
+
+            <!-- ARTICLE 9 -->
+            <h2><span class="article-number">9</span>FORCE MAJEURE</h2>
+
+            <p>Sont considérés comme cas de force majeure tous faits ou circonstances irrésistibles, extérieurs aux parties, imprévisibles et indépendants de la volonté des parties, notamment :</p>
+
+            <ul>
+                <li>🏛️ Fermeture des services publics (préfectures, mairies)</li>
+                <li>✊ Grèves des services publics</li>
+                <li>🌍 Épidémie, pandémie</li>
+                <li>⚡ Interruption des communications électroniques</li>
+                <li>📜 Changements réglementaires soudains</li>
+            </ul>
+
+            <p>En cas de force majeure, nos obligations sont suspendues. Si la situation perdure plus de 2 mois, le contrat pourra être annulé et les sommes versées remboursées au prorata.</p>
+
+            <!-- ARTICLE 10 -->
+            <h2><span class="article-number">10</span>RÉCLAMATIONS ET LITIGES</h2>
+
+            <h3>Réclamations :</h3>
+            <p>En cas de réclamation, nous vous invitons à nous contacter en priorité :</p>
+            <div class="contact-info">
+                <p>📧 Email : contact@accompagnement-migrants.fr<br>
+                📞 Téléphone : [Votre numéro]<br>
+                📮 Courrier : [Votre adresse], Elancourt, 78990</p>
+            </div>
+
+            <h3>Médiation :</h3>
+            <p>En cas de litige persistant, vous pouvez recourir à la médiation de la consommation :</p>
+            <ul>
+                <li>🏛️ <strong>Médiateur :</strong> [Nom du médiateur choisi]</li>
+                <li>🌐 <strong>Site :</strong> [Site web du médiateur]</li>
+                <li>📧 <strong>Contact :</strong> [Email du médiateur]</li>
+            </ul>
+
+            <h3>Droit applicable :</h3>
+            <p>Les présentes CGV sont régies par le droit français. En cas de litige, les tribunaux de Versailles seront compétents.</p>
+
+            <!-- ARTICLE 11 -->
+            <h2><span class="article-number">11</span>MODIFICATION DES CGV</h2>
+
+            <p>Nous nous réservons le droit de modifier les présentes CGV à tout moment. Les nouvelles conditions s'appliqueront aux contrats conclus postérieurement à leur mise en ligne.</p>
+
+            <p>Les clients ayant un contrat en cours seront informés par email des modifications 30 jours avant leur entrée en vigueur.</p>
+
+            <!-- SIGNATURE SECTION -->
+            <div class="signature-section">
+                <h2>📝 ACCEPTATION DES CONDITIONS</h2>
+                
+                <div class="important" style="background: white; margin: 1rem 0;">
+                    <p><strong>⚠️ Lecture obligatoire :</strong> Avant de signer ou accepter nos services, vous devez avoir lu et compris ces Conditions Générales de Vente.</p>
+                </div>
+
+                <div class="signature-checkbox">
+                    <input type="checkbox" id="cgv-lu" required>
+                    <label for="cgv-lu">✅ <strong>J'ai lu et compris</strong> l'intégralité des Conditions Générales de Vente</label>
+                </div>
+
+                <div class="signature-checkbox">
+                    <input type="checkbox" id="cgv-accepte" required>
+                    <label for="cgv-accepte">✅ <strong>J'accepte sans réserve</strong> ces Conditions Générales de Vente</label>
+                </div>
+
+                <div class="signature-checkbox">
+                    <input type="checkbox" id="obligation-moyens" required>
+                    <label for="obligation-moyens">✅ <strong>Je comprends</strong> que l'accompagnement constitue une obligation de moyens et non de résultat</label>
+                </div>
+
+                <div class="signature-checkbox">
+                    <input type="checkbox" id="responsabilite" required>
+                    <label for="responsabilite">✅ <strong>Je comprends</strong> que Guide administratif et migrants n'est pas responsable des décisions des administrations</label>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <p><strong>Date :</strong> 08/08/2025</p>
+                    <br>
+                    <p><strong>Signature du client :</strong></p>
+                    <p style="margin-top: 2rem; border-bottom: 1px solid #333; width: 200px; margin-left: auto; margin-right: auto;"></p>
+                </div>
+            </div>
+
+            <div class="date">
+                <p><em>Version 1.0 - Dernière mise à jour : [Date du jour]</em></p>
+                <p><em>Ces CGV sont disponibles en permanence sur accompagnement-migrants.fr/cgv.html</em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Guide administratif et migrants - Tous droits réservés</p>
+            <p>
+                <a href="index.html" style="color: #FFD6B3;">🏠 Accueil</a> | 
+                <a href="mentions-legales.html" style="color: #FFD6B3;">📋 Mentions légales</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Vérification de l'acceptation des conditions
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    // Logique pour s'assurer que tous les checkbox sont cochés
+                    // avant de pouvoir procéder à la signature
+                    console.log('Checkbox ' + this.id + ' : ' + (this.checked ? 'cochée' : 'non cochée'));
+                });
+            });
+
+            // Fonction pour vérifier si toutes les conditions sont acceptées
+            window.verifierAcceptation = function() {
+                const tousCheckbox = document.querySelectorAll('input[type="checkbox"]');
+                let tousCoches = true;
+                
+                tousCheckbox.forEach(cb => {
+                    if (!cb.checked) tousCoches = false;
+                });
+                
+                if (tousCoches) {
+                    alert('✅ Conditions acceptées ! Vous pouvez maintenant procéder à la signature du contrat.');
+                    return true;
+                } else {
+                    alert('⚠️ Veuillez cocher toutes les cases pour accepter les conditions.');
+                    return false;
+                }
+            };
+        });
+
+        // Impression des CGV
+        function imprimerCGV() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
