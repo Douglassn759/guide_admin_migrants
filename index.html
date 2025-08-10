@@ -856,5 +856,53 @@
             submitBtn.disabled = true;
         });
     </script>
+
+<!-- Bannière cookies -->
+<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#FFD6B3;padding:15px;text-align:center;box-shadow:0 -2px 5px rgba(0,0,0,0.2);">
+  <p style="margin:0;color:#333;">
+    Ce site utilise des cookies pour analyser le trafic. 
+    <button id="accept-cookies" style="background:#333;color:white;border:none;padding:8px 15px;margin-left:10px;cursor:pointer;">
+      Accepter
+    </button>
+  </p>
+</div>
+
+<script>
+  document.getElementById("accept-cookies").addEventListener("click", function() {
+    document.getElementById("cookie-banner").style.display = "none";
+    localStorage.setItem("cookiesAccepted", "true");
+
+    // Charger Google Analytics après acceptation
+    var script1 = document.createElement("script");
+    script1.async = true;
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-CEC810Q7EW";
+    document.head.appendChild(script1);
+
+    script1.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CEC810Q7EW');
+    };
+  });
+
+  // Si déjà accepté, charger directement
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    var script1 = document.createElement("script");
+    script1.async = true;
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-CEC810Q7EW";
+    document.head.appendChild(script1);
+
+    script1.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CEC810Q7EW');
+    };
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+</script>
+
+    
 </body>
 </html>
