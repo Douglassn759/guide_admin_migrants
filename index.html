@@ -513,6 +513,167 @@
                 gap: 1rem;
             }
         }
+
+
+            .news-widget {
+            background: linear-gradient(135deg, #FFD6B3 0%, #ffefdf 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .widget-header {
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .widget-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .news-icon {
+            width: 20px;
+            height: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .last-update {
+            font-size: 0.75em;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        .news-container {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 0;
+        }
+
+        .news-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .news-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(3px);
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .news-source {
+            font-size: 0.75em;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .news-date {
+            font-size: 0.7em;
+            color: #95a5a6;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 30px 20px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .error {
+            text-align: center;
+            padding: 20px;
+            color: #e74c3c;
+            font-size: 0.9em;
+        }
+
+        /* Scrollbar personnalisée */
+        .news-container::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .news-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .news-container::-webkit-scrollbar-thumb {
+            background: rgba(44, 62, 80, 0.3);
+            border-radius: 2px;
+        }
+
+        .news-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(44, 62, 80, 0.5);
+        }
+
+        /* Animation d'apparition */
+        .news-item {
+            animation: slideIn 0.5s ease forwards;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .news-item:nth-child(1) { animation-delay: 0.1s; }
+        .news-item:nth-child(2) { animation-delay: 0.2s; }
+        .news-item:nth-child(3) { animation-delay: 0.3s; }
+        .news-item:nth-child(4) { animation-delay: 0.4s; }
+        .news-item:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .news-widget {
+                max-width: 100%;
+                margin: 0;
+            }
+            
+            .news-container {
+                max-height: 250px;
+            }
+        }
+
+
+
+
+
+        
    </style>
 
 <!-- Google tag (gtag.js) -->
@@ -746,24 +907,32 @@
         </div>
     </section>
 
+
+
+    <div class="news-widget">
+        <div class="widget-header">
+            <h3 class="widget-title">
+                <svg class="news-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
+                </svg>
+                Actualités Immigration
+            </h3>
+            <div class="last-update" id="lastUpdate">Mise à jour en cours...</div>
+        </div>
+        
+        <div class="news-container" id="newsContainer">
+            <div class="loading">
+                <p>Chargement des dernières actualités...</p>
+            </div>
+        </div>
+    </div>
+
+
+    
+
     <!-- Footer -->
     <footer>
-<!--         <div class="container">
-            <div class="footer-content">
-                <a href="https://wa.me/33751493037" class="footer-link" target="_blank">
-                    📱 WhatsApp
-                </a>
-                <a href="mailto:contact@guide-migrants.fr" class="footer-link"> -->
-<!--                     📧 Email -->
-<!--                 </a>
-                <span class="footer-link">
-                    📍 Elancourt, Yvelines
-                </span>
-            </div>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
-                © 2025 Guide administratif et migrants - 
-            </p>
-        </div> --> 
+
 <!-- 
         <div class="footer-content">
             <a href="https://wa.me/33123456789" class="footer-link" target="_blank">📱 WhatsApp</a>
@@ -903,6 +1072,136 @@
     document.getElementById("cookie-banner").style.display = "none";
   }
 </script>
+
+    <script>
+        class NewsWidget {
+            constructor() {
+                this.container = document.getElementById('newsContainer');
+                this.lastUpdateElement = document.getElementById('lastUpdate');
+                this.init();
+            }
+
+            async init() {
+                try {
+                    await this.loadNews();
+                    this.updateTimestamp();
+                    // Actualiser toutes les 30 minutes
+                    setInterval(() => this.loadNews(), 30 * 60 * 1000);
+                    // Mettre à jour l'horodatage toutes les minutes
+                    setInterval(() => this.updateTimestamp(), 60 * 1000);
+                } catch (error) {
+                    this.showError();
+                }
+            }
+
+            async loadNews() {
+                try {
+                    // Simulation d'actualités (en production, vous utiliseriez une vraie API)
+                    const mockNews = await this.getMockNews();
+                    this.renderNews(mockNews);
+                } catch (error) {
+                    console.error('Erreur lors du chargement des actualités:', error);
+                    this.showError();
+                }
+            }
+
+            // Simulation de données d'actualités (remplacez par une vraie API)
+            async getMockNews() {
+                // En production, vous utiliseriez une API comme celle du gouvernement
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve([
+                            {
+                                title: "Nouveau formulaire de demande de titre de séjour disponible en ligne",
+                                source: "Service-Public.fr",
+                                date: new Date(Date.now() - 2 * 60 * 60 * 1000), // il y a 2h
+                                url: "https://service-public.fr"
+                            },
+                            {
+                                title: "Modification des délais de traitement pour les cartes de séjour",
+                                source: "Préfecture",
+                                date: new Date(Date.now() - 8 * 60 * 60 * 1000), // il y a 8h
+                                url: "https://prefectue.fr"
+                            },
+                            {
+                                title: "Nouvelles mesures d'accompagnement pour les demandeurs d'asile",
+                                source: "Ministère de l'Intérieur",
+                                date: new Date(Date.now() - 24 * 60 * 60 * 1000), // il y a 1 jour
+                                url: "https://interieur.gouv.fr"
+                            },
+                            {
+                                title: "Extension des horaires d'accueil dans les préfectures",
+                                source: "Info Gouv",
+                                date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // il y a 2 jours
+                                url: "https://gouvernement.fr"
+                            },
+                            {
+                                title: "Simplification des démarches pour le regroupement familial",
+                                source: "Service-Public.fr",
+                                date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // il y a 3 jours
+                                url: "https://service-public.fr"
+                            }
+                        ]);
+                    }, 1000);
+                });
+            }
+
+            renderNews(newsItems) {
+                this.container.innerHTML = '';
+                
+                newsItems.forEach((item, index) => {
+                    const newsElement = document.createElement('div');
+                    newsElement.className = 'news-item';
+                    newsElement.onclick = () => window.open(item.url, '_blank');
+                    
+                    newsElement.innerHTML = `
+                        <div class="news-date">${this.formatDate(item.date)}</div>
+                        <div class="news-title">${item.title}</div>
+                        <div class="news-source">${item.source}</div>
+                    `;
+                    
+                    this.container.appendChild(newsElement);
+                });
+            }
+
+            formatDate(date) {
+                const now = new Date();
+                const diffTime = Math.abs(now - date);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                const diffHours = Math.ceil(diffTime / (1000 * 60 * 60));
+                const diffMinutes = Math.ceil(diffTime / (1000 * 60));
+
+                if (diffMinutes < 60) {
+                    return `${diffMinutes}min`;
+                } else if (diffHours < 24) {
+                    return `${diffHours}h`;
+                } else if (diffDays === 1) {
+                    return 'hier';
+                } else {
+                    return `${diffDays}j`;
+                }
+            }
+
+            updateTimestamp() {
+                const now = new Date();
+                this.lastUpdateElement.textContent = `Dernière mise à jour: ${now.toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'})}`;
+            }
+
+            showError() {
+                this.container.innerHTML = `
+                    <div class="error">
+                        <p>❌ Impossible de charger les actualités</p>
+                        <p>Vérifiez votre connexion internet</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialiser le widget au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            new NewsWidget();
+        });
+    </script>
 
     
 </body>
