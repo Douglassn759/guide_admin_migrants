@@ -515,22 +515,26 @@
         }
 
 
-            .news-widget {
+           .news-widget {
             background: linear-gradient(135deg, #FFD6B3 0%, #ffefdf 100%);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 350px;
-            margin: 0 auto;
-            overflow: hidden;
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--primary-color);
+            margin: 3% 0;
             position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s;
         }
 
         .widget-header {
             background: rgba(44, 62, 80, 0.9);
             color: white;
-            padding: 15px 20px;
+            padding: 1rem;
             text-align: center;
             position: relative;
+            border-radius: 12px 12px 0 0;
         }
 
         .widget-title {
@@ -561,14 +565,14 @@
         }
 
         .news-container {
-            max-height: 300px;
+            max-height: 280px;
             overflow-y: auto;
             padding: 0;
         }
 
         .news-item {
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 15px 20px;
+            padding: 1rem;
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
@@ -668,7 +672,6 @@
                 max-height: 250px;
             }
         }
-
 
 
 
@@ -1073,7 +1076,7 @@
   }
 </script>
 
-    <script>
+      <script>
         class NewsWidget {
             constructor() {
                 this.container = document.getElementById('newsContainer');
@@ -1105,41 +1108,40 @@
                 }
             }
 
-            // Simulation de données d'actualités (remplacez par une vraie API)
+            // Actualités réelles avec vrais liens - Août 2025
             async getMockNews() {
-                // En production, vous utiliseriez une API comme celle du gouvernement
                 return new Promise(resolve => {
                     setTimeout(() => {
                         resolve([
                             {
-                                title: "Nouveau formulaire de demande de titre de séjour disponible en ligne",
+                                title: "Nouvelle circulaire de fermeté de Bruno Retailleau pour l'octroi des titres de séjour",
+                                source: "Public Sénat",
+                                date: new Date('2025-01-24'),
+                                url: "https://www.publicsenat.fr/actualites/societe/immigration-ce-qui-va-changer-avec-la-nouvelle-circulaire-de-fermete-de-bruno-retailleau"
+                            },
+                            {
+                                title: "Décret relatif au comité interministériel de contrôle de l'immigration",
+                                source: "Légifrance",
+                                date: new Date('2025-01-22'),
+                                url: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051020622"
+                            },
+                            {
+                                title: "L'État renforce la lutte contre l'immigration irrégulière et améliore les conditions d'intégration",
+                                source: "Services de l'État en Gironde",
+                                date: new Date('2025-02-01'),
+                                url: "https://www.gironde.gouv.fr/Actualites/Communiques-de-presse/Communiques-de-presse-2025/Fevrier-2025/L-Etat-renforce-la-lutte-contre-l-immigration-irreguliere-et-ameliore-les-conditions-d-integration"
+                            },
+                            {
+                                title: "Immigration en France en 2025 : chiffres, origines et marché du travail",
+                                source: "Guide Immigration",
+                                date: new Date('2025-05-24'),
+                                url: "https://guide-immigration.fr/immigration-france-2025/"
+                            },
+                            {
+                                title: "Loi immigration : plusieurs dispositions entrent en vigueur",
                                 source: "Service-Public.fr",
-                                date: new Date(Date.now() - 2 * 60 * 60 * 1000), // il y a 2h
-                                url: "https://service-public.fr"
-                            },
-                            {
-                                title: "Modification des délais de traitement pour les cartes de séjour",
-                                source: "Préfecture",
-                                date: new Date(Date.now() - 8 * 60 * 60 * 1000), // il y a 8h
-                                url: "https://prefectue.fr"
-                            },
-                            {
-                                title: "Nouvelles mesures d'accompagnement pour les demandeurs d'asile",
-                                source: "Ministère de l'Intérieur",
-                                date: new Date(Date.now() - 24 * 60 * 60 * 1000), // il y a 1 jour
-                                url: "https://interieur.gouv.fr"
-                            },
-                            {
-                                title: "Extension des horaires d'accueil dans les préfectures",
-                                source: "Info Gouv",
-                                date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // il y a 2 jours
-                                url: "https://gouvernement.fr"
-                            },
-                            {
-                                title: "Simplification des démarches pour le regroupement familial",
-                                source: "Service-Public.fr",
-                                date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // il y a 3 jours
-                                url: "https://service-public.fr"
+                                date: new Date('2024-07-17'),
+                                url: "https://www.service-public.fr/particuliers/actualites/A17534"
                             }
                         ]);
                     }, 1000);
@@ -1202,7 +1204,6 @@
             new NewsWidget();
         });
     </script>
-
     
 </body>
 </html>
