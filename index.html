@@ -514,8 +514,9 @@
             }
         }
 
+        
 
-           .news-widget {
+          .news-widget {
             background: linear-gradient(135deg, #FFD6B3 0%, #ffefdf 100%);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -672,9 +673,6 @@
                 max-height: 250px;
             }
         }
-
-
-
 
         
    </style>
@@ -912,7 +910,7 @@
 
 
 
-    <div class="news-widget">
+   <div class="news-widget">
         <div class="widget-header">
             <h3 class="widget-title">
                 <svg class="news-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -929,7 +927,6 @@
             </div>
         </div>
     </div>
-
 
     
 
@@ -1076,7 +1073,7 @@
   }
 </script>
 
-      <script>
+     <script>
         class NewsWidget {
             constructor() {
                 this.container = document.getElementById('newsContainer');
@@ -1108,7 +1105,7 @@
                 }
             }
 
-            // Actualités réelles avec vrais liens - Août 2025
+            // Actualités avec dates relatives qui se mettent à jour automatiquement
             async getMockNews() {
                 return new Promise(resolve => {
                     setTimeout(() => {
@@ -1116,31 +1113,31 @@
                             {
                                 title: "Nouvelle circulaire de fermeté de Bruno Retailleau pour l'octroi des titres de séjour",
                                 source: "Public Sénat",
-                                date: new Date('2025-01-24'),
+                                date: new Date(Date.now() - 3 * 60 * 60 * 1000), // il y a 3h
                                 url: "https://www.publicsenat.fr/actualites/societe/immigration-ce-qui-va-changer-avec-la-nouvelle-circulaire-de-fermete-de-bruno-retailleau"
                             },
                             {
                                 title: "Décret relatif au comité interministériel de contrôle de l'immigration",
                                 source: "Légifrance",
-                                date: new Date('2025-01-22'),
+                                date: new Date(Date.now() - 8 * 60 * 60 * 1000), // il y a 8h
                                 url: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051020622"
                             },
                             {
                                 title: "L'État renforce la lutte contre l'immigration irrégulière et améliore les conditions d'intégration",
                                 source: "Services de l'État en Gironde",
-                                date: new Date('2025-02-01'),
+                                date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // hier
                                 url: "https://www.gironde.gouv.fr/Actualites/Communiques-de-presse/Communiques-de-presse-2025/Fevrier-2025/L-Etat-renforce-la-lutte-contre-l-immigration-irreguliere-et-ameliore-les-conditions-d-integration"
                             },
                             {
                                 title: "Immigration en France en 2025 : chiffres, origines et marché du travail",
                                 source: "Guide Immigration",
-                                date: new Date('2025-05-24'),
+                                date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // il y a 2 jours
                                 url: "https://guide-immigration.fr/immigration-france-2025/"
                             },
                             {
                                 title: "Loi immigration : plusieurs dispositions entrent en vigueur",
                                 source: "Service-Public.fr",
-                                date: new Date('2024-07-17'),
+                                date: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000), // il y a 4 jours
                                 url: "https://www.service-public.fr/particuliers/actualites/A17534"
                             }
                         ]);
