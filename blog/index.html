@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Conseils et Actualités Immigration | Accompagnement Migrants</title>
+    <meta name="description" content="Découvrez nos conseils d'experts, guides pratiques et actualités sur l'immigration, les titres de séjour et démarches administratives.">
+    <style>
+        :root {
+            --primary-color: #FFD6B3;
+            --secondary-color: #ffefdf;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-radius: 12px;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .nav a.active {
+            background: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Article Card */
+        .article-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .article-date {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--text-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .article-link:hover {
+            background: var(--text-dark);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Coming Soon Card */
+        .coming-soon {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px dashed var(--primary-color);
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .coming-soon h3 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid white;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .newsletter button {
+            background: var(--text-dark);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html">🏠 Accueil</a>
+            <a href="index.html" class="active">📚 Blog</a>
+            <a href="../mentions-legales.html">📄 Mentions Légales</a>
+            <a href="../conditions-generales-ventes.html">📋 CGV</a>
+            <a href="../carte.html">💳 Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>📚 Blog Immigration & Démarches</h1>
+        <p>Conseils d'experts, guides pratiques et actualités pour vos démarches administratives</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Blog Articles Grid -->
+        <section class="blog-grid">
+            <!-- Premier Article - Bientôt disponible -->
+            <article class="article-card">
+                <div class="article-header">
+                    <div class="article-date">📅 Septembre 2025</div>
+                    <span class="article-category">🎯 Guide Pratique</span>
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">Guide Complet : Renouveler son Titre de Séjour en 2025</h2>
+                    <p class="article-excerpt">
+                        Découvrez toutes les nouveautés 2025, les documents nécessaires, les délais à respecter et nos conseils d'experts pour réussir votre renouvellement sans stress.
+                    </p>
+                    <a href="renouveler-titre-sejour-2025.html" class="article-link">Lire l'article →</a>
+                </div>
+            </article>
+
+            <!-- Articles à venir -->
+            <article class="article-card">
+                <div class="article-header">
+                    <div class="article-date">📅 Bientôt</div>
+                    <span class="article-category">📋 Démarches</span>
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">Préfecture : Comment Prendre Rendez-vous Rapidement</h2>
+                    <p class="article-excerpt">
+                        Les meilleures stratégies pour obtenir un rendez-vous en préfecture, les créneaux à privilégier et les alternatives numériques.
+                    </p>
+                    <div class="coming-soon">
+                        <h3>🚧 Article en préparation</h3>
+                        <p>Disponible prochainement</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-header">
+                    <div class="article-date">📅 Bientôt</div>
+                    <span class="article-category">💼 Accompagnement</span>
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">Regroupement Familial : Étapes et Documents 2025</h2>
+                    <p class="article-excerpt">
+                        Tout savoir sur les procédures de regroupement familial, les conditions à remplir et comment optimiser votre dossier.
+                    </p>
+                    <div class="coming-soon">
+                        <h3>🚧 Article en préparation</h3>
+                        <p>Disponible prochainement</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <h2>📧 Restez Informé</h2>
+            <p>Recevez nos derniers conseils et actualités directement dans votre boîte mail</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit">S'abonner</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Accompagnement Migrants. Tous droits réservés.</p>
+        <p>🌐 <a href="../index.html" style="color: #FFD6B3;">accompagnement-migrants.fr</a></p>
+    </footer>
+</body>
+</html>
